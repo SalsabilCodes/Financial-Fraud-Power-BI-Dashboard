@@ -15,16 +15,19 @@ A new column `Fraud_Label` was added to categorize transactions:
 Fraud_Label = IF('synthetic_fraud_dataset'[is_fraud] = 1, "Fraud", "Legit")
 
 ## Measures
-1- Fraud Rate = DIVIDE(SUM('synthetic_fraud_dataset'[is_fraud]), COUNTROWS('synthetic_fraud_dataset'))
-2- Total Fraud = SUM('synthetic_fraud_dataset'[is_fraud])
+1- Fraud Rate = DIVIDE(SUM('synthetic_fraud_dataset'[is_fraud]), COUNTROWS('synthetic_fraud_dataset')).
+
+2- Total Fraud = SUM('synthetic_fraud_dataset'[is_fraud]).
+
 3- Avg Fraud Amount = CALCULATE(
     AVERAGE('synthetic_fraud_dataset'[amount]), 
     'synthetic_fraud_dataset'[is_fraud] = 1
-)
+).
+
 4- Fraud Count per User = CALCULATE(
     COUNTROWS('synthetic_fraud_dataset'),
     'synthetic_fraud_dataset'[is_fraud] = 1
-)
+). 
 
 ## Dashboard Features
 
