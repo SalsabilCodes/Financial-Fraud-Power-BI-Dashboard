@@ -11,7 +11,7 @@ A **Power BI dashboard** to analyze financial fraud transactions using a synthet
 
 A new column `Fraud_Label` was added to categorize transactions:
 
-```DAX
+``DAX
 Fraud_Label = IF('synthetic_fraud_dataset'[is_fraud] = 1, "Fraud", "Legit")
 
 ## Measures
